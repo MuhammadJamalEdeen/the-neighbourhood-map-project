@@ -1,0 +1,75 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#listView {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+label {
+    margin-left: 1em;
+}
+
+input {
+    margin-bottom: 1em;
+}
+
+div p {
+    color: rebeccapurple;
+}
+
+#map,
+#listView {
+    width: 100%;
+    position: relative;
+}
+
+#listView {
+    height: 30%;
+    overflow: scroll;
+}
+
+#map {
+    height: 70%;
+}
+
+@media screen and (min-width: 600px) {
+    #map,
+    #listView {
+        height: 100%;
+        position: absolute;
+    }
+
+    #listView {
+        width: 25%;
+    }
+
+    #map {
+        width: 75%;
+        left: 25%;
+        top: 0;
+        bottom: 0;
+    }
+}
