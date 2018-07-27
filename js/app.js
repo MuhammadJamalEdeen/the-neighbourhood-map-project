@@ -188,12 +188,12 @@ function populateInfoWindow(marker, infowindow, place) {
         data: {
             client_id: "0UUNK1HCPIDNERJDEJ1GIJ5VR115A4DWHRFLNTFA0H2Z21HR",
             client_secret: "M3LBGXZEFIHFW1RF5ITTHAEQ44BS1OCPOQG30ZTC0A5BYPH0",
-            v: '20180213',
+            v: '20180726',
             ll: `${place.location.lat},${place.location.lng}`,
-            query: place.name
         },
     }).done(function (data, textStatus, jqXHR) {
-        APIResult = data.response.groups[0].items[0].tips[0].text;
+        APIResult = data.response.groups[0].items[0].venue.location.formattedAddress;
+        console.log(APIResult);
     }).fail(function (jqXHR, textStatus, errorThrown) {
         alert("Failed to fetch the details of the location from the Foursquare API.");
     }).then(function () {
