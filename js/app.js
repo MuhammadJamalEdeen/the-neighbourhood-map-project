@@ -177,9 +177,7 @@ function toggleBounce(marker) {
 // A variable to hold the API response data.
 var APIResult;
 
-// This function populates the infowindow when the marker is clicked. We'll only allow
-// one infowindow which will open at the marker that is clicked, and populate based
-// on that marker's position.
+// This function populates the infowindow when either the location's name or its corresponding marker // is clicked. We'll only allow only one infowindow at a time.
 function populateInfoWindow(marker, infowindow, place) {
     // AJAX request for the foursquare API.
     $.ajax({
@@ -193,7 +191,6 @@ function populateInfoWindow(marker, infowindow, place) {
         },
     }).done(function (data, textStatus, jqXHR) {
         APIResult = data.response.groups[0].items[0].venue.location.formattedAddress;
-        console.log(APIResult);
     }).fail(function (jqXHR, textStatus, errorThrown) {
         alert("Failed to fetch the details of the location from the Foursquare API.");
     }).then(function () {
